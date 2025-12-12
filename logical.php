@@ -69,22 +69,28 @@
     echo "<br>";
     $result = "";
 
-  
+  echo "<br>";
 
     function Calculator($num1, $num2, $operator) {
     switch($operator) {
+
         case '+':
-            return $num1 + $num2;
+            echo $num1 + $num2."<br>";
+            break;
         case '-':
-            return $num1 - $num2;
+            echo $num1 - $num2."<br>";
+            break;
         case '*':
-            return $num1 * $num2;
+            echo $num1 * $num2."<br>";
+            break;
         case '/':
-            if($num2 == 0) return "Cannot divide by zero";
-            return $num1 / $num2;
+            if($num2 == 0) echo "Cannot divide by zero";
+            echo $num1 / $num2."<br>";
+            break;
         default:
-            return "Invalid operator";
+            echo "Invalid operator";
         }}
+        Calculator(5,8,'-');
 
     $voteAge = 15;
     if ($voteAge <= 15) {
