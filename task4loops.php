@@ -240,6 +240,7 @@ echo $arr1[$j]."&nbsp;" ; }
 
 echo "<br>";
  }
+ echo"<br> done";
 
  
 
