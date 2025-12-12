@@ -69,44 +69,23 @@
     echo "<br>";
     $result = "";
 
-    class calculator
-    {
-        var $num1;
-        var $num2;
+  
 
-        function checkopration($oprator)
-        {
-            switch ($oprator) {
-                case '+':
-                    return $this->num1 + $this->num2;
+    function Calculator($num1, $num2, $operator) {
+    switch($operator) {
+        case '+':
+            return $num1 + $num2;
+        case '-':
+            return $num1 - $num2;
+        case '*':
+            return $num1 * $num2;
+        case '/':
+            if($num2 == 0) return "Cannot divide by zero";
+            return $num1 / $num2;
+        default:
+            return "Invalid operator";
+        }}
 
-                case '-':
-                    return $this->num1 - $this->num2;
-
-                case '*':
-                    return $this->num1 * $this->num2;
-
-                case '/':
-                    return $this->num1 / $this->num2;
-
-                default:
-                    return "Sorry No command found";
-            }
-        }
-
-        function getresult($num1, $num2, $c)
-        {
-            $this->num1 = $num1;
-            $this->num2 = $num2;
-            return $this->checkopration($c);
-        }
-    }
-
-    $cal = new calculator();
-
-    if (isset($_POST['submit'])) {
-        $result = $cal->getresult($_POST['n1'], $_POST['n2'], $_POST['op']);
-    }
     $voteAge = 15;
     if ($voteAge <= 15) {
         echo 'is not eligible to vote';
@@ -143,38 +122,7 @@
 
 
     ?>
-    <form method="post">
-        <table align="center">
-            <tr>
-                <td>Enter 1st Number</td>
-                <td><input type="text" name="n1"></td>
-            </tr>
-
-            <tr>
-                <td>Enter 2nd Number</td>
-                <td><input type="text" name="n2"></td>
-            </tr>
-
-            <tr>
-                <td>Select Oprator</td>
-                <td><select name="op">
-                        <option value="+">+</option>
-                        <option value="-">-</option>
-                        <option value="*">*</option>
-                        <option value="/">/</option>
-                    </select></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input type="submit" name="submit" value="                =                "></td>
-            </tr>
-            <tr>
-                <td><strong><?php echo $result; ?><strong></td>
-            </tr>
-
-        </table>
-    </form>
+    
 </body>
 
 </html>
